@@ -23,7 +23,27 @@ const servidor = http.createServer((req, res) => {
 
     res.end(JSON.stringify(productos));
 
-  } else {
+  }
+  
+  else if (req.url === "/api/productos:id") {
+
+    res.writeHead(200, {
+      "Content-Type": "application/json"
+    });
+
+    res.end(JSON.stringify(productos));
+
+  }else if (req.url === "/api/productos:nombre") {
+
+    res.writeHead(200, {
+      "Content-Type": "application/json"
+    });
+
+    res.end(JSON.stringify(productos));
+
+}
+
+  else {
 
     res.writeHead(404, {
       "Content-Type": "text/html; charset=utf-8"
