@@ -4,7 +4,8 @@
   "description": "Api con el CRUD de productos",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node servidor.js",
+    "test": "node --test tests/api.test.js"
   },
   "keywords": [],
   "author": "",

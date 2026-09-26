@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos | CRUD</title>
+  <link rel="stylesheet" href="estilos.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main>
+    <header><p class="etiqueta">ADMINISTRACIÓN</p><h1>Productos</h1><p>Crea, consulta y actualiza tu catálogo de productos.</p></header>
+    <p id="mensaje" role="status" aria-live="polite"></p>
+    <section aria-labelledby="titulo-formulario">
+      <h2 id="titulo-formulario">Nuevo producto</h2>
+      <form id="formulario">
+        <label>Nombre<input id="nombre" name="nombre" required placeholder="Ej. Teclado"></label>
+        <label>Precio (COP)<input id="precio" name="precio" type="number" min="0" step="any" required placeholder="Ej. 50000"></label>
+        <div class="acciones"><button type="submit" id="guardar">Crear producto</button><button type="button" id="cancelar" class="secundario" hidden>Cancelar edición</button></div>
+      </form>
+    </section>
+    <section aria-labelledby="titulo-lista">
+      <h2 id="titulo-lista">Catálogo</h2>
+      <form id="busqueda" class="busqueda">
+        <label>Buscar por<select id="criterio"><option value="id">ID</option><option value="nombre">Nombre exacto</option></select></label>
+        <label>Valor<input id="consulta" required placeholder="ID o nombre del producto"></label>
+        <button type="submit">Buscar</button><button type="button" id="listar" class="secundario">Ver todos</button>
+      </form>
+      <p id="resumen"></p>
+      <div class="tabla"><table><thead><tr><th>ID</th><th>Nombre</th><th>Precio (COP)</th><th>Acciones</th></tr></thead><tbody id="productos"></tbody></table></div>
+    </section>
+    <footer>Los cambios se conservan mientras el servidor está encendido.</footer>
+  </main>
+</body>
+</html>
